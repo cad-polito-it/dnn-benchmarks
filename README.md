@@ -95,11 +95,22 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
+3. Install Tensorflow with CUDA support
+```
+pip install "tensorflow[and-cuda]"
+```
+
+4. Install PyTorch for CPU. 
+```
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+```
+
 3. Install the dependencies from the requirements
 You can find a requirements.txt from which you can install all dependencies using
-``
+
+```
 pip install -r requirements.txt
-``
+```
 
 4. Test that GPU is available at least in Tensorflow
 * For TensorFlow run 
@@ -114,10 +125,10 @@ If GPU support is available should print a non-empty list at the end.
 ```
 python -c "import torch; print(torch.cuda.is_available())"
 ```
-It should print "True" if everything was setup. If it does not work it remains still possible to run injection in TensorFlow/Keras.
+It should print "True" if everything was setup. If GPU does not work it remains still possible to run injection in TensorFlow/Keras.
 
 5. If TensorFlow does not work with the GPU try installing it manually using [this guide](https://www.tensorflow.org/install/pip), starting from a fresh environment. Then install also the following packages included in the requirements.txt:
-* ipythonil
+* ipython
 * keras
 * tqdm
 * tabulate
