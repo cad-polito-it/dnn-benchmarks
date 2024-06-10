@@ -2,6 +2,7 @@
 
 ipython
 keras<3.0.0
+tensorflow[and-cuda]==2.14
 tqdm
 tabulate
 natsort
