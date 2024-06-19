@@ -69,7 +69,7 @@ In addition, the accuracy of the models will be displayed on the terminal after 
 
 DARIO
 
-## Fault list
+## Fault list and FI
 
 Inside the ```.fault_list/```. directory, the fault lists have been generated for each model paired with a specific dataset to perform a statistical analysis of reliability. It is noted that the type of fault described is permanent and simulates a stuck-at fault in the memory where the model weights are stored. The files are in .csv format, and their structure is as follows:
 
@@ -88,6 +88,8 @@ PyTorch Fault List for a ResNet20 model trained on CIFAR10 example
 - `masked`: inferenze che mascherano il fault
 - `non_critical`: inferenze in cui il fault modifica l'output ma non la previsione
 - `critical`: inferenza in cui il fault  è classificato come SDC-1, cioè modifica la predizione finale
+
+To perform the fault injection campaigns on the PyTorch models, we used SFIadvancedmodels(link), a fault injector developed by the CAD research group at the DAUIN department of Politecnico di Torino.
 
 
 ## Available Models (so far)
@@ -133,8 +135,4 @@ All the models are validated using the GTSRB validation set, that cointains 1264
 | DenseNet121 | <div align="right">96.5%</div> | <div align="right">96.5%</div> |
 |  Vgg11_bn   | <div align="right">95.5%</div> | <div align="right">95.5%</div> |
 
-
-## Fault injections
-
-### Pytorch
 
