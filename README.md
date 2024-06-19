@@ -73,7 +73,7 @@ DARIO
 
 Inside the ```.fault_list/```. directory, the fault lists have been generated for each model paired with a specific dataset to perform a statistical analysis of reliability. It is noted that the type of fault described is permanent and simulates a stuck-at fault in the memory where the model weights are stored. The files are in .csv format, and their structure is as follows:
 
-ResNet20 model trained on CIFAR10 example
+PyTorch Fault List for a ResNet20 model trained on CIFAR10 example
 
 | Injection | Layer |   TensorIndex  | Bit | n_injections | masked | non_critical | critical |
 |:---------:|:-----:|:--------------:|:---:|:------------:|:------:|:------------:|:--------:|
