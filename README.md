@@ -9,6 +9,15 @@ This project is a collaboration between the following institutions:
 - [Politecnico di Milano](https://www.polimi.it/)
 - [Ecole Centrale de Lyon](https://www.ec-lyon.fr/en)
 
+
+## Getting Started
+The idea of this project is to share neural networks for conducting reliability studies. The goal is to make it easier and more accessible for different research groups to compare their results.
+
+Within the repository, you will find the code and weights for some PyTorch models for image classification (so far), pre-trained on the CIFAR10, CIFAR100, and GTSRB datasets. Additionally, using [nobuco](https://github.com/AlexanderLutsenko/nobuco), we have converted the PyTorch models to their Keras counterparts, which share the same architecture, weights, and similar accuracy.
+
+For each model, a fault list has been generated, and a fault injection campaign has been conducted to evaluate the reliability and comparability between the PyTorch and Keras versions. For further details, you can refer to the paper \cite{} submitted to (TCAD?). All fault lists are included in the repository, along with some of the results from the injection campaigns.
+
+
 ## Installation
 
 1. Create a virtual environment
@@ -34,13 +43,6 @@ pip install -r requirements.txt
 ```
 ./download_models.sh
 ```
-
-## Getting Started
-The idea of this project is to share neural networks for conducting reliability studies. The goal is to make it easier and more accessible for different research groups to compare their results.
-
-Within the repository, you will find the code and weights for some PyTorch models for image classification (so far), pre-trained on the CIFAR10, CIFAR100, and GTSRB datasets. Additionally, using [nobuco](https://github.com/AlexanderLutsenko/nobuco), we have converted the PyTorch models to their Keras counterparts, which share the same architecture, weights, and similar accuracy.
-
-For each model, a fault list has been generated, and a fault injection campaign has been conducted to evaluate the reliability and comparability between the PyTorch and Keras versions. For further details, you can refer to the paper \cite{} submitted to (TCAD?). All fault lists are included in the repository, along with some of the results from the injection campaigns.
 
 
 ## Projects structure
