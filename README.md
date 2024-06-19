@@ -11,12 +11,6 @@ This project is a collaboration between the following institutions:
 
 ## Installation
 
-### Injections with PyTorch
-
-IGNORE
-
-### Injections with TensorFlow
-
 1. Create a virtual environment
 
 ```
@@ -36,18 +30,10 @@ You can find a requirements.txt from which you can install all dependencies usin
 pip install -r requirements.txt
 ```
 
-4. Install PyTorch for CPU. (We need PyTorch only for dataloading and for common operations, so GPU support is not needed and may create
-additional problems)
-```
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
-```
-
-
-5. Download the pretrained networks by running
+4. Download the pretrained networks by running ?
 ```
 ./download_models.sh
 ```
-
 
 ## Getting Started
 
@@ -60,7 +46,14 @@ python main.py -n network-name -b batch-size -d dataset-name
 
 It is possible to execute inferences with available GPUs sepcifing the argument ```--use-cuda```.
 
-By default, results are saved in ```.pt``` files in the ```output/network_name/pt``` folder. 
+By default, results are saved in ```.pt``` files in the ```output/dataset-name/network-name/batch-size/``` folder. 
+
+In addition, the accuracy of the models will be displayed on the terminal after the inferences of the selected test dataset are completed.
+
+
+### Tensorflow
+
+DARIO
 
 ## Available Models (so far)
 
@@ -107,22 +100,5 @@ All the models are validated using the GTSRB validation set, that cointains 1264
 |  ResNet20   | <div align="right">94.3%</div> | <div align="right">94.3%</div> |
 | DenseNet121 | <div align="right">96.5%</div> | <div align="right">96.5%</div> |
 |  Vgg11_bn   | <div align="right">95.5%</div> | <div align="right">95.5%</div> |
-
-
-## Prerequisites  
-
-Before running inferences, install the needed packages and tools
-```
-pip install -r requirements.txt
-```
-
-
-## Analyse the results: from .pt to .csv
-
-Results file can be converted to csv using the script:
-```
-python pt_to_csv.py -n network-name -b batch-size 
-```
-Results are saved in the ```output/network_name/csv``` folder. Notice that carrying out operation on the CSV file is going to be more expensive than carrying out the same analysis on .pt files. This format should be used only for data visualization purposes only.
 
 
