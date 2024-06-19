@@ -80,14 +80,14 @@ PyTorch Fault List for a ResNet20 model trained on CIFAR10 example
 |         0 | conv1 | "(3, 0, 2, 1)" |  15 |        10000 |     14 |         9985 |        1 |
 |    ...    |  ...  |       ...      | ... |      ...     |   ...  |      ...     |    ...   |
 
-- `Injection`: colonna che indica il numero dell'iniezione
-- `Layer`: layer in cui viene iniettato il fault
-- `TensorIndex`: coordinata del peso in cui viene iniettato il fault
-- `Bit`: bit corrotto che viene flippato 
-- `n_injections`: numero di inferenze che sono state fate con il fault iniettato (combacia con il test set del dataset)
-- `masked`: inferenze che mascherano il fault
-- `non_critical`: inferenze in cui il fault modifica l'output ma non la previsione
-- `critical`: inferenza in cui il fault  è classificato come SDC-1, cioè modifica la predizione finale
+- `Injection`: column indicating the injection number.
+- `Layer`: the layer in which the fault is injected.        
+- `TensorIndex`: coordinate of the weight where the fault is injected.
+- `Bit`: corrupted bit that is flipped.
+- `n_injections`: number of inferences made with the injected fault (matches the test set of the dataset).
+- `masked`: inferences that mask the fault.
+- `non_critical`: inferences where the fault alters the output but not the prediction.
+- `critical`: inference where the fault is classified as SDC-1, meaning it alters the final prediction.
 
 To perform the fault injection campaigns on the PyTorch models, we used SFIadvancedmodels(link), a fault injector developed by the CAD research group at the DAUIN department of Politecnico di Torino.
 
