@@ -36,8 +36,22 @@ pip install -r requirements.txt
 ```
 
 ## Getting Started
+The idea of this project is to share neural networks for conducting reliability studies. The goal is to make it easier and more accessible for different research groups to compare their results.
+
+Within the repository, you will find the code and weights for some PyTorch models for image classification (so far), pre-trained on the CIFAR10, CIFAR100, and GTSRB datasets. Additionally, using [nobuco](https://github.com/AlexanderLutsenko/nobuco), we have converted the PyTorch models to their Keras counterparts, which share the same architecture, weights, and similar accuracy.
+
+For each model, a fault list has been generated, and a fault injection campaign has been conducted to evaluate the reliability and comparability between the PyTorch and Keras versions. For further details, you can refer to the paper \cite{} submitted to (TCAD?). All fault lists are included in the repository, along with some of the results from the injection campaigns.
+
+
+## Projects structure
+
+The repository is organized into three main directories:
+- ```pytorch_becnhark/```: contains folders for each type of task for each group of models, such as ```image_classification/```, each containing the code and weights of the PyTorch models
+- ```tensorflow_benchmark/```: has the same structure as the previous directory but for the Keras models.
+- ```fault_list/```: contains the fault lists for each model and a portion of the results obtained from fault injection campaigns."
 
 ### Pytorch
+Inside the ```pytorch_benchmarks/image_classification``` folder, you can run a test on all models.
 
 A clean Pytorch inference can be executed with the following programm:
 ```
@@ -55,10 +69,28 @@ In addition, the accuracy of the models will be displayed on the terminal after 
 
 DARIO
 
-## Available Models (so far)
+## Fault list
 
-The Keras versions of the models, when available, are obtained using the [nobuco](https://github.com/AlexanderLutsenko/nobuco) PyTorch to Keras converter.
-The Keras versions of all models share the same structure and weigths, and have similar accuracies to their PyTorch counterpart.
+Inside the ```.fault_list/```. directory, the fault lists have been generated for each model paired with a specific dataset to perform a statistical analysis of reliability. It is noted that the type of fault described is permanent and simulates a stuck-at fault in the memory where the model weights are stored. The files are in .csv format, and their structure is as follows:
+
+ResNet20 model trained on CIFAR10 example
+
+| Injection | Layer |   TensorIndex  | Bit | n_injections | masked | non_critical | critical |
+|:---------:|:-----:|:--------------:|:---:|:------------:|:------:|:------------:|:--------:|
+|         0 | conv1 | "(3, 0, 2, 1)" |  15 |        10000 |     14 |         9985 |        1 |
+|    ...    |  ...  |       ...      | ... |      ...     |   ...  |      ...     |    ...   |
+
+- `Injection`: colonna che indica il numero dell'iniezione
+- `Layer`: layer in cui viene iniettato il fault
+- `TensorIndex`: coordinata del peso in cui viene iniettato il fault
+- `Bit`: bit corrotto che viene flippato 
+- `n_injections`: numero di inferenze che sono state fate con il fault iniettato (combacia con il test set del dataset)
+- `masked`: inferenze che mascherano il fault
+- `non_critical`: inferenze in cui il fault modifica l'output ma non la previsione
+- `critical`: inferenza in cui il fault  è classificato come SDC-1, cioè modifica la predizione finale
+
+
+## Available Models (so far)
 
 ### CIFAR-10 Models
 Here is a list of models trained for CIFAR10 dataset, that has images belonging to 10 classes.
@@ -101,4 +133,8 @@ All the models are validated using the GTSRB validation set, that cointains 1264
 | DenseNet121 | <div align="right">96.5%</div> | <div align="right">96.5%</div> |
 |  Vgg11_bn   | <div align="right">95.5%</div> | <div align="right">95.5%</div> |
 
+
+## Fault injections
+
+### Pytorch
 
