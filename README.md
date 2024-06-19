@@ -50,7 +50,7 @@ pip install -r requirements.txt
 The repository is organized into three main directories:
 - ```pytorch_becnhark/```: contains folders for each type of task for each group of models, such as ```image_classification/```, each containing the code and weights of the PyTorch models
 - ```tensorflow_benchmark/```: has the same structure as the previous directory but for the Keras models.
-- ```fault_list/```: contains the fault lists for each model and a portion of the results obtained from fault injection campaigns."
+- ```fault_lists/```: contains the fault lists for each model and a portion of the results obtained from fault injection campaigns."
 
 ### Pytorch
 Inside the ```pytorch_benchmarks/image_classification``` folder, you can run a test on all models.
@@ -73,7 +73,7 @@ DARIO
 
 ## Fault list and FI
 
-Inside the ```.fault_list/```. directory, the fault lists have been generated for each model paired with a specific dataset to perform a statistical analysis of reliability. It is noted that the type of fault described is permanent and simulates a stuck-at fault in the memory where the model weights are stored. The files are in .csv format, and their structure is as follows:
+Inside the ```.fault_lists/```. directory, the fault lists have been generated for each model paired with a specific dataset to perform a statistical analysis of reliability. It is noted that the type of fault described is permanent and simulates a stuck-at fault in the memory where the model weights are stored. The files are in .csv format, and their structure is as follows:
 
 PyTorch Fault List for a ResNet20 model trained on CIFAR10 example
 
