@@ -35,6 +35,7 @@ def main(args):
         device=device,
         network_name=args.network_name,
         loader=loader,
+        dataset_name=args.dataset,
     )
 
     # This function runs clean inferences on the golden dataset 

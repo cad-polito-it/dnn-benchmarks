@@ -600,11 +600,12 @@ class InferenceManager(ABC):
         network,
         network_name: str,
         loader: DataLoader,
+        dataset_name: str
     ):
         self.network = network
         self.network_name = network_name
         self.loader = loader
-
+        self.dataset_name = dataset_name
         # The clean output of the network after the first run
         self.clean_output_scores = list()
         self.clean_output_indices = list()
@@ -616,30 +617,11 @@ class InferenceManager(ABC):
 
         # TODO: Change format for saving data (if needed)
         # The output dir
-        self.label_output_dir = os.path.join(
-            "output",
-            self.network_name,
-            "pt",
-            "label",
-            f"batch_size_{self.loader.batch_size}",
-        )
+        self.label_output_dir = f'output/{self.dataset_name}/{self.network_name}/batch_size_{self.loader.batch_size}/labels'
 
-        self.clean_output_dir = os.path.join(
-            "output",
-            self.network_name,
-            "pt",
-            "clean",
-            f"batch_size_{self.loader.batch_size}",
-        )
+        self.clean_output_dir = f'output/{self.dataset_name}/{self.network_name}/batch_size_{self.loader.batch_size}/clean'
 
-        self.clean_faulty_dir = os.path.join(
-            "output",
-            self.network_name,
-            "pt",
-            "clean",
-            f"batch_size_{self.loader.batch_size}",
-        )
-
+        self.clean_faulty_dir = f'output/{self.dataset_name}/{self.network_name}/batch_size_{self.loader.batch_size}/faulty'
         # Create the output dir
         os.makedirs(self.label_output_dir, exist_ok=True)
         os.makedirs(self.clean_output_dir, exist_ok=True)
@@ -702,8 +684,9 @@ class PTInferenceManager(InferenceManager):
         network_name: str,
         device: torch.device,
         loader: DataLoader,
+        dataset_name: str
     ):
-        super(PTInferenceManager, self).__init__(network, network_name, loader)
+        super(PTInferenceManager, self).__init__(network, network_name, loader, dataset_name)
         self.device = device
 
     def run_inference(self, faulty=False, verbose=False, save_outputs=True):

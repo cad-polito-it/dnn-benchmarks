@@ -51,9 +51,11 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 
 ## Getting Started
 
+### Pytorch
+
 A clean Pytorch inference can be executed with the following programm:
 ```
-python main.py -n network-name -b batch-size 
+python main.py -n network-name -b batch-size -d dataset-name 
 ```
 
 It is possible to execute inferences with available GPUs sepcifing the argument ```--use-cuda```.
