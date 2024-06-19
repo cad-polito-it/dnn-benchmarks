@@ -19,8 +19,6 @@ from models.GTSRB import vgg_GTSRB
 from models.GTSRB import resnet_GTSRB
 from models.GTSRB import densenet_GTSRB
 
-import importlib.resources
-
 # from torchvision.models import efficientnet_b0, EfficientNet_B0_Weights, densenet121, DenseNet121_Weights
 from torch.utils.data import DataLoader
 
@@ -65,7 +63,7 @@ class UnknownNetworkException(Exception):
     pass
 
 
-SUPPORTED_DATASETS = ["CIFAR10", "CIFAR100", "GTSRB", "IMAGENET"]
+SUPPORTED_DATASETS = ["CIFAR10", "CIFAR100", "GTSRB"]
 
 SUPPORTED_MODELS = [
     "ResNet18",
