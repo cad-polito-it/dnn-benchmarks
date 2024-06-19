@@ -69,21 +69,21 @@ The Keras versions of all models share the same structure and weigths, and have 
 Here is a list of models trained for CIFAR10 dataset, that has images belonging to 10 classes.
 All the models are validated using the CIFAR10 validation set, that cointains 10000 images.
 
-|    Model    | PyTorch TOP-1 Accuracy | Keras TOP-1 Accuracy |
-| :---------: | :--------------------: | :------------------: |
-|  ResNet20   |         91.5 %         |        91.5 %        |
-|  ResNet32   |         92.3 %         |        92.3 %        |
-|  ResNet44   |         92.8 %         |        92.8 %        |
-|  ResNet56   |         93.3 %         |        93.3 %        |
-|  ResNet110  |         93.5 %         |        93.5 %        |
-| MobileNetV2 |         91.7 %         |        91.7 %        |
-|  Vgg19_bn   |         93.2 %         |        93.2 %        |
-|  Vgg16_bn   |         93.5 %         |        93.5 %        |
-|  Vgg13_bn   |         93.8 %         |        93.8 %        |
-|  Vgg11_bn   |         91.3 %         |        91.3 %        |
-| DenseNet121 |         93.2 %         |        93.1 %        |
-| DenseNet161 |         93.1 %         |        93.1 %        |
-|  GoogLeNet  |         92.2 %         |        92.2 %        |
+|    Model    |    PyTorch TOP-1 Accuracy     |     Keras TOP-1 Accuracy     |
+| :---------: | :---------------------------: | :--------------------------: |
+|  ResNet20   | <div align="right">91.5 %</div> | <div align="right">91.5 %</div> |
+|  ResNet32   | <div align="right">92.3 %</div> | <div align="right">92.3 %</div> |
+|  ResNet44   | <div align="right">92.8 %</div> | <div align="right">92.8 %</div> |
+|  ResNet56   | <div align="right">93.3 %</div> | <div align="right">93.3 %</div> |
+|  ResNet110  | <div align="right">93.5 %</div> | <div align="right">93.5 %</div> |
+| MobileNetV2 | <div align="right">91.7 %</div> | <div align="right">91.7 %</div> |
+|  Vgg19_bn   | <div align="right">93.2 %</div> | <div align="right">93.2 %</div> |
+|  Vgg16_bn   | <div align="right">93.5 %</div> | <div align="right">93.5 %</div> |
+|  Vgg13_bn   | <div align="right">93.8 %</div> | <div align="right">93.8 %</div> |
+|  Vgg11_bn   | <div align="right">91.3 %</div> | <div align="right">91.3 %</div> |
+| DenseNet121 | <div align="right">93.2 %</div> | <div align="right">93.1 %</div> |
+| DenseNet161 | <div align="right">93.1 %</div> | <div align="right">93.1 %</div> |
+|  GoogLeNet  | <div align="right">92.2 %</div> | <div align="right">92.2 %</div> |
 
 ### CIFAR-100 Models
 Here is a list of models trained for CIFAR100 dataset, that has images belonging to 100 classes.
