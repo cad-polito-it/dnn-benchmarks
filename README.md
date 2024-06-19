@@ -89,8 +89,7 @@ PyTorch Fault List for a ResNet20 model trained on CIFAR10 example
 - `non_critical`: inferences where the fault alters the output but not the prediction.
 - `critical`: inference where the fault is classified as SDC-1, meaning it alters the final prediction.
 
-To perform the fault injection campaigns on the PyTorch models, we used SFIadvancedmodels(link), a fault injector developed by the CAD research group at the DAUIN department of Politecnico di Torino.
-
+To perform the fault injection campaigns on the PyTorch models, we used SFIadvancedmodels(link), a fault injector developed by the CAD & Reliability group of the Department of Control and Computer Engineering (DAUIN) of Politecnico di Torino
 
 ## Available Models (so far)
 
