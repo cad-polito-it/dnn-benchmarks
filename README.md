@@ -91,9 +91,10 @@ All the models are validated using the CIFAR100 validation set, that cointains 1
 
 |    Model    | PyTorch TOP-1 Accuracy | Keras TOP-1 Accuracy |
 | :---------: | :--------------------: | :------------------: |
-|  ResNet18   |         76.2 %         |        76.2 %        |
-| DenseNet121 |         78.7 %         |        78.7 %        |
-|  GoogLeNet  |         76.3 %         |        76.3 %        |
+|  ResNet18   | <div align="right">76.2 %</div> | <div align="right">76.2 %</div> |
+| DenseNet121 | <div align="right">78.7 %</div> | <div align="right">78.7 %</div> |
+|  GoogLeNet  | <div align="right">76.3 %</div> | <div align="right">76.3 %</div> |
+
 
 ### GTSRB Models
 Here is a list of models trained for GTSRB dataset, containing 43 classes of German Traffic signals.
@@ -101,9 +102,10 @@ All the models are validated using the GTSRB validation set, that cointains 1264
 
 |    Model    | PyTorch TOP-1 Accuracy | Keras TOP-1 Accuracy |
 | :---------: | :--------------------: | :------------------: |
-|  ResNet20   |         94.3%          |        94.3%         |
-| DenseNet121 |         96.5%          |        96.5%         |
-|  Vgg11_bn   |         95.5%          |        95.5%         |
+|  ResNet20   | <div align="right">94.3%</div> | <div align="right">94.3%</div> |
+| DenseNet121 | <div align="right">96.5%</div> | <div align="right">96.5%</div> |
+|  Vgg11_bn   | <div align="right">95.5%</div> | <div align="right">95.5%</div> |
+
 
 ## Prerequisites  
 
