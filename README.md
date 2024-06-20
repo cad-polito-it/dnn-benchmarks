@@ -60,7 +60,7 @@ A clean Pytorch inference can be executed with the following programm:
 python main.py -n network-name -b batch-size -d dataset-name 
 ```
 
-It is possible to execute inferences with available GPUs sepcifing the argument ```--use-cuda```.
+It is possible to execute inferences with available GPUs specifing the argument ```--use-cuda```.
 
 By default, results are saved in ```.pt``` files in the ```output/dataset-name/network-name/batch-size/``` folder. 
 
