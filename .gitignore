@@ -159,16 +159,4 @@ datasets/
 weights/
 .python-version
 
-# Ignore all weights files except for a placeholder .md file (This is due to git that does not support adding empty folders)
-benchmark_models/models/pretrained_models/**/*
-!benchmark_models/models/pretrained_models/**/*.md
-benchmark_models/models/converted-tf/**/*
-!benchmark_models/models/converted-tf/**/*.md
-
-
-scripts
-reports
-container_reports
-tmp
-classes_models
-benchmark_models/faultlists/test_faultists
+pytorch_benchmarks/image_classification/pretrained_weights/
