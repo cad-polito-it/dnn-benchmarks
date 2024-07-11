@@ -1,6 +1,6 @@
 import torch
 
-from benchmark_models.utils import load_network, get_device, parse_args, get_loader
+from benchmark_models.utils import get_device, parse_args, get_loader
 
 
 def main(args):
@@ -12,17 +12,13 @@ def main(args):
 
     print(f"Using device {device}")
 
-    # Load the network
-    network = load_network(
-        network_name=args.network_name, device=device, dataset_name=args.dataset
-    )
 
     print(f"Using network: {args.network_name}")
 
     _, loader = get_loader(
         dataset_name=args.dataset,
         batch_size=args.batch_size,
-        permute_tf=args.tensorflow,
+        permute_tf=True,
     )
 
     # Import inference manager only here to avoid importing tensorflow for pytorch users

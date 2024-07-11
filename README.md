@@ -13,7 +13,7 @@ This project is a collaboration between the following institutions:
 ## Getting Started
 The idea of this project is to share neural networks for conducting reliability studies. The goal is to make it easier and more accessible for different research groups to compare their results.
 
-Within the repository, you will find the code and weights for some PyTorch models for image classification (so far), pre-trained on the CIFAR10, CIFAR100, and GTSRB datasets. Additionally, using [nobuco](https://github.com/AlexanderLutsenko/nobuco), we have converted the PyTorch models to their Keras counterparts, which share the same architecture, weights, and similar accuracy.
+Within the repository, you will find the code and weights for some PyTorch models for image classification (so far), pre-trained on the CIFAR10, CIFAR100, and GTSRB datasets. Additionally, using [nobuco](https://github.com/AlexanderLutsenko/nobuco), we have converted the PyTorch models to their Keras counterparts, which share the same architecture, weights, and similar accuracy. A public backup fork of the converter is available also here [nobuco-fork](https://github.com/D4De/nobuco).
 
 For each model, a fault list has been generated, and a fault injection campaign has been conducted to evaluate the reliability and comparability between the PyTorch and Keras versions. For further details, you can refer to the paper \cite{} submitted to (TCAD?). All fault lists are included in the repository, along with some of the results from the injection campaigns.
 
@@ -68,8 +68,15 @@ In addition, the accuracy of the models will be displayed on the terminal after 
 
 
 ### Tensorflow
+Inside the ```tensorflow_benchmarks/image_classification``` folder, you can a clean inference for each model, using the following command.
 
-DARIO
+```
+python main.py -n network-name -b batch-size -d dataset-name 
+```
+
+It is possible to execute inferences with available GPUs specifing the argument ```--use-cuda```.
+
+The accuracy of the models will be displayed on the terminal after the inferences of the selected test dataset are completed.
 
 ## Fault list and FI
 

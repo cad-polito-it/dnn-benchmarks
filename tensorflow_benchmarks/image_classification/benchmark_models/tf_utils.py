@@ -10,7 +10,7 @@ MODULE_PATH = importlib.resources.files(__package__)
 
 
 def load_converted_tf_network(
-    network_name: str, dataset_name: str, models_path: str = "models/converted-tf"
+    network_name: str, dataset_name: str, models_path: str = "../pretrained_weights"
 ) -> keras.Model:
     """
     Load the converted keras network from .keras local file.
