@@ -11,7 +11,7 @@ This project is a collaboration between the following institutions:
 
 
 ## Getting Started
-The idea of this project is to share neural networks for conducting reliability studies. The goal is to make it easier and more accessible for different research groups to compare their results.
+The idea of this project is to share neural networks to conduct reliability studies. The goal is to make it easier and more accessible for different research groups to compare their results.
 
 Within the repository, you will find the code and weights for some PyTorch models for image classification (so far), pre-trained on the CIFAR10, CIFAR100, and GTSRB datasets. Additionally, using [nobuco](https://github.com/AlexanderLutsenko/nobuco), we have converted the PyTorch models to their Keras counterparts, which share the same architecture, weights, and similar accuracy. A public backup fork of the converter is available also here [nobuco-fork](https://github.com/D4De/nobuco).
 
@@ -55,12 +55,12 @@ The repository is organized into three main directories:
 ### Pytorch
 Inside the ```pytorch_benchmarks/image_classification``` folder, you can run a test on all models.
 
-A clean Pytorch inference can be executed with the following programm:
+A clean Pytorch inference can be executed with the following program:
 ```
 python main.py -n network-name -b batch-size -d dataset-name 
 ```
 
-It is possible to execute inferences with available GPUs specifing the argument ```--use-cuda```.
+It is possible to execute inferences with available GPUs specifying the argument ```--use-cuda```.
 
 By default, results are saved in ```.pt``` files in the ```output/dataset-name/network-name/batch-size/``` folder. 
 
@@ -74,7 +74,7 @@ Inside the ```tensorflow_benchmarks/image_classification``` folder, you can a cl
 python main.py -n network-name -b batch-size -d dataset-name 
 ```
 
-It is possible to execute inferences with available GPUs specifing the argument ```--use-cuda```.
+It is possible to execute inferences with available GPUs specifying the argument ```--use-cuda```.
 
 The accuracy of the models will be displayed on the terminal after the inferences of the selected test dataset are completed.
 
@@ -100,11 +100,13 @@ PyTorch Fault List for a ResNet20 model trained on CIFAR10 example
 
 To perform the fault injection campaigns on the PyTorch models, we used SFIadvancedmodels(link), a fault injector developed by the CAD & Reliability group of the Department of Control and Computer Engineering (DAUIN) of Politecnico di Torino
 
+SHOULD THIS PART BE COMPLETED BY ADDING TENSORFLOW FAULT LISTS AND THE LINK TO POLIMI FI?
+
 ## Available Models (so far)
 
 ### CIFAR-10 Models
-Here is a list of models trained for CIFAR10 dataset, that has images belonging to 10 classes.
-All the models are validated using the CIFAR10 validation set, that cointains 10000 images.
+Here is a list of models trained for CIFAR10 dataset, which has images belonging to 10 classes.
+All the models are validated using the CIFAR10 validation set that contains 10000 images.
 
 |    Model    |    PyTorch TOP-1 Accuracy     |     Keras TOP-1 Accuracy     |
 | :---------: | :---------------------------: | :--------------------------: |
@@ -124,7 +126,7 @@ All the models are validated using the CIFAR10 validation set, that cointains 10
 
 ### CIFAR-100 Models
 Here is a list of models trained for CIFAR100 dataset, that has images belonging to 100 classes.
-All the models are validated using the CIFAR100 validation set, that cointains 10000 images.
+All the models are validated using the CIFAR100 validation set that contains 10000 images.
 
 |    Model    | PyTorch TOP-1 Accuracy | Keras TOP-1 Accuracy |
 | :---------: | :--------------------: | :------------------: |
@@ -135,7 +137,7 @@ All the models are validated using the CIFAR100 validation set, that cointains 1
 
 ### GTSRB Models
 Here is a list of models trained for GTSRB dataset, containing 43 classes of German Traffic signals.
-All the models are validated using the GTSRB validation set, that cointains 12640 images.
+All the models are validated using the GTSRB validation set that contains 12640 images.
 
 |    Model    | PyTorch TOP-1 Accuracy | Keras TOP-1 Accuracy |
 | :---------: | :--------------------: | :------------------: |
