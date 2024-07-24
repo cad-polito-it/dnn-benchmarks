@@ -1,0 +1,3 @@
+[submodule "fann/benchmark_models/models/Vgg19_Cifar10_keras"]
+	path = fann/benchmark_models/models/Vgg19_Cifar10_keras
+	url = https://huggingface.co/jspkay/Vgg19_Cifar10_keras
