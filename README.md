@@ -17,6 +17,11 @@ Within the repository, you will find the code and weights for some PyTorch model
 
 For each model, a fault list has been generated, and a fault injection campaign has been conducted to evaluate the reliability and comparability between the PyTorch and Keras versions. For further details, you can refer to the paper \cite{} submitted to (TCAD?). All fault lists are included in the repository, along with some of the results from the injection campaigns.
 
+> In order to download the pretrained-weights, please execute the following command:
+> `git submodule init`
+> Nevertheless, this command will download all the available models with related trained weights.
+> If you are interested in a specific subset, you need to initialize only the related modules. You find a comprehensive list of the avaiable models in the directory ./benchmark_models/models/ and you can download one of them with the following command:
+> `git submodule init {model_name}` where you need to substitue `{model_name}` with the submodule name you find in the repo.
 
 ## Installation
 
