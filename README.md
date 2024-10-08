@@ -45,7 +45,7 @@ pip install -r requirements.txt
 ```
 
 # 4. Download the pretrained networks by running ?
-# ```
+# 
 # ./download_models.sh
 
 4. Clone the repository
