@@ -63,7 +63,7 @@ The repository is organized into two main directories:
 
 The following transformations are applied for image preprocessing with each dataset, ensuring the input data is appropriately augmented for training and prepared for testing.
 
-# CIFAR10
+### CIFAR10
 ```
 transform_train = transforms.Compose([
         transforms.RandomCrop(32, padding=4),                                       
@@ -77,7 +77,7 @@ transform_test = transforms.Compose([
     transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),   
 ])
 ```
-# CIFAR100
+### CIFAR100
 ```
 transform_train = transforms.Compose([
         #transforms.ToPILImage(),
@@ -94,7 +94,7 @@ transform_test = transforms.Compose([
                          (0.2673342858792401, 0.2564384629170883, 0.27615047132568404))
 ])
 ```
-# GTSRB
+### GTSRB
 ```
 transform_train = Compose([
     ColorJitter(brightness=1.0, contrast=0.5, saturation=1, hue=0.1),
