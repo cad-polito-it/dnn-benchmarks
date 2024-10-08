@@ -15,13 +15,8 @@ The idea of this project is to share neural networks to conduct reliability stud
 
 Within the repository, you will find the code and weights for some PyTorch models for image classification (so far), pre-trained on the CIFAR10, CIFAR100, and GTSRB datasets. Additionally, using [nobuco](https://github.com/AlexanderLutsenko/nobuco), we have converted the PyTorch models to their Keras counterparts, which share the same architecture, weights, and similar accuracy. A public backup fork of the converter is available also here [nobuco-fork](https://github.com/D4De/nobuco).
 
-For each model, a fault list has been generated, and a fault injection campaign has been conducted to evaluate the reliability and comparability between the PyTorch and Keras versions. For further details, you can refer to the paper \cite{} submitted to (TCAD?). All fault lists are included in the repository, along with some of the results from the injection campaigns.
+For each model, a fault list has been generated, and a fault injection campaign has been conducted to evaluate the reliability and comparability between the PyTorch and Keras versions. For further details, you can refer to the paper \cite{} submitted to TCAD. All fault lists are included in the repository, along with some of the results from the injection campaigns.
 
-> In order to download the pretrained-weights, please execute the following command:
-> `git submodule init`
-> Nevertheless, this command will download all the available models with related trained weights.
-> If you are interested in a specific subset, you need to initialize only the related modules. You find a comprehensive list of the avaiable models in the directory ./benchmark_models/models/ and you can download one of them with the following command:
-> `git submodule init {model_name}` where you need to substitue `{model_name}` with the submodule name you find in the repo.
 
 ## Installation
 
@@ -59,36 +54,72 @@ git clone https://github.com/cad-polito-it/dnn-benchmarks
 
 ## Projects structure
 
-The repository is organized into three main directories:
-- ```pytorch_becnhark/```: contains folders for each type of task for each group of models, such as ```image_classification/```, each containing the code and weights of the PyTorch models
-- ```tensorflow_benchmark/```: has the same structure as the previous directory but for the Keras models.
-- ```fault_lists/```: contains the fault lists for each model and a portion of the results obtained from fault injection campaigns."
+The repository is organized into two main directories:
+- ```torch/```: This directory includes folders organized by hardware type and task, such as ```gpu/image_classification/```, with each containing subdirectories for different data representation and reference datasets. Each dataset-specific folder holds the code, the fault list and the pretrained weights for the corresponding PyTorch models
+- ```tensorflow/```: has the same structure as the previous directory but for the Keras models.
 
-### Pytorch
-Inside the ```pytorch_benchmarks/image_classification``` folder, you can run a test on all models.
 
-A clean Pytorch inference can be executed with the following program:
+## Dataset transformations description
+
+The following transformations are applied for image preprocessing with each dataset, ensuring the input data is appropriately augmented for training and prepared for testing.
+
+# CIFAR10
 ```
-python main.py -n network-name -b batch-size -d dataset-name 
+transform_train = transforms.Compose([
+        transforms.RandomCrop(32, padding=4),                                       
+        transforms.RandomHorizontalFlip(),                                          
+        transforms.ToTensor(),                                                      
+        transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),   
+])
+transform_test = transforms.Compose([
+    transforms.CenterCrop(32),                                                  
+    transforms.ToTensor(),                                                      
+    transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),   
+])
+```
+# CIFAR100
+```
+transform_train = transforms.Compose([
+        #transforms.ToPILImage(),
+        transforms.RandomCrop(32, padding=4),
+        transforms.RandomHorizontalFlip(),
+        transforms.RandomRotation(15),
+        transforms.ToTensor(),
+        transforms.Normalize((0.5070751592371323, 0.48654887331495095, 0.4409178433670343),
+                         (0.2673342858792401, 0.2564384629170883, 0.27615047132568404))
+])
+transform_test = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.5070751592371323, 0.48654887331495095, 0.4409178433670343),
+                         (0.2673342858792401, 0.2564384629170883, 0.27615047132568404))
+])
+```
+# GTSRB
+```
+transform_train = Compose([
+    ColorJitter(brightness=1.0, contrast=0.5, saturation=1, hue=0.1),
+    RandomEqualize(0.4),
+    AugMix(),
+    RandomHorizontalFlip(0.3),
+    RandomVerticalFlip(0.3),
+    GaussianBlur((3,3)),
+    RandomRotation(30),
+    
+    Resize([50,50]),
+    ToTensor(),
+    transforms.Normalize((0.3403, 0.3121, 0.3214),
+                            (0.2724, 0.2608, 0.2669))
+    
+])
+
+transform_test = Compose([
+    Resize([50, 50]),
+    ToTensor(),
+    transforms.Normalize((0.3403, 0.3121, 0.3214), 
+                            (0.2724, 0.2608, 0.2669)),
+])
 ```
 
-It is possible to execute inferences with available GPUs specifying the argument ```--use-cuda```.
-
-By default, results are saved in ```.pt``` files in the ```output/dataset-name/network-name/batch-size/``` folder. 
-
-In addition, the accuracy of the models will be displayed on the terminal after the inferences of the selected test dataset are completed.
-
-
-### Tensorflow
-Inside the ```tensorflow_benchmarks/image_classification``` folder, you can a clean inference for each model, using the following command.
-
-```
-python main.py -n network-name -b batch-size -d dataset-name 
-```
-
-It is possible to execute inferences with available GPUs specifying the argument ```--use-cuda```.
-
-The accuracy of the models will be displayed on the terminal after the inferences of the selected test dataset are completed.
 
 ## Fault list and FI
 
