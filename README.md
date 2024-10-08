@@ -44,9 +44,24 @@ You can find a requirements.txt from which you can install all dependencies usin
 pip install -r requirements.txt
 ```
 
-4. Download the pretrained networks by running ?
+# 4. Download the pretrained networks by running ?
+# ```
+# ./download_models.sh
+
+4. Clone the repository
+
+Given the great size of the checkpoints of the weights, this repo uses git-lfs. 
+This means that to clone the repo **with the weights** you need to install git-lfs.
+In general, you just need to install the git-lfs package on your distribution (something like `apt install git-lsf`)
+and then install the plugin on git using the command `git lsf install`.
+For more information [check this link](https://git-lfs.com/)
+After doing that, simply clone the repo:
+
+```bash
+git clone https://github.com/cad-polito-it/dnn-benchmarks
 ```
-./download_models.sh
+```
+```
 ```
 
 
