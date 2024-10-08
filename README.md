@@ -111,7 +111,6 @@ transform_train = Compose([
                             (0.2724, 0.2608, 0.2669))
     
 ])
-
 transform_test = Compose([
     Resize([50, 50]),
     ToTensor(),
@@ -143,7 +142,8 @@ PyTorch Fault List for a ResNet20 model trained on CIFAR10 example
 
 To perform the fault injection campaigns on the PyTorch models, we used [SFIadvancedmodels](https://github.com/cad-polito-it/SFIadvancedmodels), a fault injector developed by the CAD & Reliability group of the Department of Control and Computer Engineering (DAUIN) of Politecnico di Torino
 
-SHOULD THIS PART BE COMPLETED BY ADDING TENSORFLOW FAULT LISTS AND THE LINK TO POLIMI FI?
+ADD POLIMI FI
+
 
 ## Available Models (so far)
 
