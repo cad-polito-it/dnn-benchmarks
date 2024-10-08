@@ -55,9 +55,6 @@ After doing that, simply clone the repo:
 ```bash
 git clone https://github.com/cad-polito-it/dnn-benchmarks
 ```
-```
-```
-```
 
 
 ## Projects structure
