@@ -44,9 +44,9 @@ You can find a requirements.txt from which you can install all dependencies usin
 pip install -r requirements.txt
 ```
 
-# 4. Download the pretrained networks by running ?
-# 
-# ./download_models.sh
+#4. Download the pretrained networks by running ?
+#
+#./download_models.sh
 
 4. Clone the repository
 
