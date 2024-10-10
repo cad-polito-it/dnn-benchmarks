@@ -145,7 +145,7 @@ To perform the fault injection campaigns on the PyTorch models, we used [SFIadva
 ADD POLIMI FI
 
 
-## Available Models (so far)
+## Available Models 
 
 ### CIFAR-10 Models
 Here is a list of models trained for CIFAR10 dataset, which has images belonging to 10 classes.
