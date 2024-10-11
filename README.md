@@ -142,7 +142,8 @@ PyTorch Fault List for a ResNet20 model trained on CIFAR10 example
 
 To perform the fault injection campaigns on the PyTorch models, we used [SFIadvancedmodels](https://github.com/cad-polito-it/SFIadvancedmodels), a fault injector developed by the CAD & Reliability group of the Department of Control and Computer Engineering (DAUIN) of Politecnico di Torino
 
-ADD POLIMI FI
+To perform the fault injection campaigns on the Tensorflow framework, we used a [Keras weight Injector](https://github.com/D4De/keras_weight_injector), developed by research team on Dependable Computing Systems at Politecnico di Milano
+
 
 
 ## Available Models 
