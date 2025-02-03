@@ -61,9 +61,11 @@ The repository is organized into two main directories:
 
 ## Dataset transformations description
 
-The following transformations are applied for image preprocessing with each dataset, ensuring the input data is appropriately augmented for training and prepared for testing.
+The following transformations are applied for image preprocessing with each dataset in PyTorch and TensorFlow, respectively, ensuring the input data is appropriately augmented for training and prepared for testing.
 
-### CIFAR10
+### Transformations in PyTorch
+
+**CIFAR10**
 ```
 transform_train = transforms.Compose([
         transforms.RandomCrop(32, padding=4),                                       
@@ -77,7 +79,7 @@ transform_test = transforms.Compose([
     transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),   
 ])
 ```
-### CIFAR100
+**CIFAR100**
 ```
 transform_train = transforms.Compose([
         #transforms.ToPILImage(),
@@ -94,7 +96,7 @@ transform_test = transforms.Compose([
                          (0.2673342858792401, 0.2564384629170883, 0.27615047132568404))
 ])
 ```
-### GTSRB
+**GTSRB**
 ```
 transform_train = Compose([
     ColorJitter(brightness=1.0, contrast=0.5, saturation=1, hue=0.1),
@@ -117,6 +119,28 @@ transform_test = Compose([
     transforms.Normalize((0.3403, 0.3121, 0.3214), 
                             (0.2724, 0.2608, 0.2669)),
 ])
+```
+### Transformations in TensorFlow
+
+> [!NOTE] NumPy functions have been used in place of native TensorFlow ones to obtain exactly the same internal representation of the manipulated dataset in the two environments.
+
+**CIFAR10**
+```
+image = image / np.float32(255.0)
+image = (image - (0.4914, 0.4822, 0.4465)) / (0.2023, 0.1994, 0.2010)
+```
+
+**CIFAR100**
+```
+image = image / np.float32(255.0)
+image = (image - (0.5070751592371323, 0.48654887331495095, 0.4409178433670343)) / (0.2673342858792401, 0.2564384629170883, 0.27615047132568404)
+```
+
+**GTSRB**
+```
+image = tf.image.resize(image, [50, 50]).numpy()
+image = image / np.float32(255.0)
+image = (image - (0.3403, 0.3121, 0.3214)) / (0.2724, 0.2608, 0.2669)
 ```
 
 
