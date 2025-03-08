@@ -231,6 +231,13 @@ All the models are validated using the GTSRB validation set that contains 12640 
 | DenseNet121 | <div align="right">96.5%</div> | <div align="right">96.5%</div> |
 |  Vgg11_bn   | <div align="right">95.5%</div> | <div align="right">95.5%</div> |
 
+### COCO (restricted to only PASCAL VOC 2012 classes) Models
+Here is a list of models trained for COCO dataset, but restricted to only the 20 PASCAL VOC 2012 segmentation dataset classes.
+All the models are validated using the PASCAL VOC 2012 validation set that contains 1449 images.
+
+|    Model    | PyTorch Pixel Accuracy | Keras Pixel Accuracy | Keras IoU Accuracy | Keras IoU Accuracy |
+| :---------: | :--------------------: | :------------------: | :------------------: | :------------------: |
+|  DeepLabV3   | <div align="right">89.2%</div> | <div align="right">89.2.3%</div> | <div align="right">71.1%</div> | <div align="right">71.1%</div> |
 
 # Acknowledgments
 This study was carried out within the FAIR - Future Artificial Intelligence Research and received funding from the European Union Next-GenerationEU (PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNRR) – MISSIONE 4 COMPONENTE 2, INVESTIMENTO 1.3 – D.D. 1555 11/10/2022, PE00000013). This manuscript reflects only the authors’ views and opinions, neither the European Union nor the European Commission can be considered responsible for them.
