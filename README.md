@@ -237,7 +237,7 @@ All the models are validated using the PASCAL VOC 2012 validation set that conta
 
 |    Model    | PyTorch Pixel Accuracy | Keras Pixel Accuracy | Keras IoU Accuracy | Keras IoU Accuracy |
 | :---------: | :--------------------: | :------------------: | :------------------: | :------------------: |
-|  DeepLabV3   | <div align="right">89.2%</div> | <div align="right">89.2.3%</div> | <div align="right">71.1%</div> | <div align="right">71.1%</div> |
+|  DeepLabV3   | <div align="right">89.2%</div> | <div align="right">89.2%</div> | <div align="right">71.1%</div> | <div align="right">71.1%</div> |
 
 # Acknowledgments
 This study was carried out within the FAIR - Future Artificial Intelligence Research and received funding from the European Union Next-GenerationEU (PIANO NAZIONALE DI RIPRESA E RESILIENZA (PNRR) – MISSIONE 4 COMPONENTE 2, INVESTIMENTO 1.3 – D.D. 1555 11/10/2022, PE00000013). This manuscript reflects only the authors’ views and opinions, neither the European Union nor the European Commission can be considered responsible for them.
