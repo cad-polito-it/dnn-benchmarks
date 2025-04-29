@@ -235,7 +235,7 @@ All the models are validated using the GTSRB validation set that contains 12640 
 Here is a list of models trained for COCO dataset, but restricted to only the 20 PASCAL VOC 2012 segmentation dataset classes.
 All the models are validated using the PASCAL VOC 2012 validation set that contains 1449 images.
 
-|    Model    | PyTorch Pixel Accuracy | Keras Pixel Accuracy | Keras IoU Accuracy | Keras IoU Accuracy |
+|    Model    | PyTorch Pixel Accuracy | Keras Pixel Accuracy | PyTorch IoU Accuracy | Keras IoU Accuracy |
 | :---------: | :--------------------: | :------------------: | :------------------: | :------------------: |
 |  DeepLabV3   | <div align="right">89.2%</div> | <div align="right">89.2%</div> | <div align="right">71.1%</div> | <div align="right">71.1%</div> |
 
